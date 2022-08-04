@@ -1,0 +1,44 @@
+#!/bin/bash
+# set env NPROF_HOME
+
+Usage() {
+    cat <<EOF
+Usage: nprof -t <data_type> <executable>
+
+Options:    
+    -t <data_type> fp32
+EOF
+    exit 0
+}
+
+# default type
+type=fp32
+
+while test "x$1" != x
+do
+    arg="$1"; shift
+    case "$arg" in
+        -t)
+            type=$1
+            shift
+            ;;
+        -h)
+            Usage
+            exit 0
+            ;;
+        * )
+            set -- "$arg" "$@"
+            break
+            ;;
+    esac
+done
+
+NPROF_EXEC=$1
+
+if [ $type == fp32 ]
+then
+    PATCH_LIB=$NPROF_HOME/tool/fp32-iterative/fp32-iterative.so
+fi
+
+echo "LD_PRELOAD=$PATCH_LIB $NPROF_EXEC"
+LD_PRELOAD=$PATCH_LIB $NPROF_EXEC
