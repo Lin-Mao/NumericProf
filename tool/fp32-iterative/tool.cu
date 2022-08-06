@@ -25,6 +25,10 @@
     "0x" << std::setfill('0') << std::setw(16) << std::hex << (uint64_t)x \
          << std::dec
 
+#define HEX_EXP(x)                                                            \
+    ""   << std::setfill('0') << std::setw(2) << std::hex << (uint16_t)x \
+         << std::dec
+
 #define CHANNEL_SIZE (1l << 20)
 
 struct CTXstate {
@@ -105,7 +109,7 @@ void instrument_function_if_needed(CUcontext ctx, CUfunction func) {
 
         if (verbose) {
             printf(
-                "MEMTRACE: CTX %p, Inspecting CUfunction %p name %s at address "
+                "CTX %p, Inspecting CUfunction %p name %s at address "
                 "0x%lx\n",
                 ctx, f, nvbit_get_func_name(ctx, f), nvbit_get_func_addr(f));
         }
@@ -224,7 +228,7 @@ void nvbit_at_cuda_event(CUcontext ctx, int is_exit, nvbit_api_cuda_t cbid,
             nvbit_enable_instrumented(ctx, p->f, true);
 
             printf(
-                "MEMTRACE: CTX 0x%016lx - LAUNCH - Kernel pc 0x%016lx - Kernel "
+                "CTX 0x%016lx - LAUNCH - Kernel pc 0x%016lx - Kernel "
                 "name %s - grid launch id %ld - grid size %d,%d,%d - block "
                 "size %d,%d,%d - nregs %d - shmem %d - cuda stream id %ld\n",
                 (uint64_t)ctx, pc, func_name, grid_launch_id, p->gridDimX,
@@ -253,6 +257,7 @@ void* recv_thread_fun(void* args) {
 
     std::vector<exc_result_t> exc_log;
 
+    uint pc = 0;
     while (!done) {
         /* receive buffer from channel */
         uint32_t num_recv_bytes = ch_host->recv(recv_buffer, CHANNEL_SIZE);
@@ -277,28 +282,35 @@ void* recv_thread_fun(void* args) {
                 //    << ii->cta_id_y << "," << ii->cta_id_z << " - warp "
                 //    << ii->warp_id << " - " << id_to_opcode_map[ii->opcode_id]
                 //    << " - ";
+                if (ii->pc != pc) {
+                    pc = ii->pc;
+                    std::string pad(100, '-');
+                    printf("%s\n", pad.c_str());
+                }
                 ss << "PC " << ii->pc << " (grid_id, block_id, warp_id)=(" << ii->grid_launch_id
-                   << ", (" << ii->cta_id_x << "," << ii->cta_id_y << "," << ii->cta_id_x
-                   << "), " << ii->warp_id << ")\n EXC: ";
+                   << ", (" << ii->cta_id_x << "," << ii->cta_id_y << "," << ii->cta_id_z
+                   << "), " << ii->warp_id << ")\n";
 
                 std::vector<int> lane_id;
+                ss << "  EXC: ";
                 for (int i = 0; i < 32; i++) {
-                    ss << ii->exception[i] << " ";
+                    ss << std::setfill(' ') << std::setw(2) << ii->exception[i] << " ";
                     if (ii->exception[i] != NONE) {
                         lane_id.push_back(i);
                     }
                 }
+                ss << "\n";
                 if (!lane_id.empty()) {
                     exc_result_t exc_res;
                     exc_res.lane_id = lane_id;
                     exc_res.ii = ii;
                     exc_log.push_back(exc_res);
                 }
-                ss << "\n EXP: ";
+                ss << "  EXP: ";
                 for (int i = 0; i < 32; i++) {
                     uint32_t exponent = ii->data[i] << 1;
                     exponent = exponent >> 24;
-                    ss << exponent << " ";
+                    ss << HEX_EXP(exponent) << " ";
                 }
 
                 printf("%s\n", ss.str().c_str());
@@ -307,7 +319,9 @@ void* recv_thread_fun(void* args) {
         }
     }
     if (!exc_log.empty()) {
-        printf("Exception occurs at:\n");
+        std::string pad(100, '#');
+        printf("%s\n", pad.c_str());
+        printf("Exception report:\n");
         for (auto i : exc_log) {
             printf("PC: %d, (grid_id, block_id, warp_id)=(%lu, (%d, %d, %d), %d)\n",
             i.ii->pc, i.ii->grid_launch_id, i.ii->cta_id_x, i.ii->cta_id_y,
@@ -325,7 +339,7 @@ void* recv_thread_fun(void* args) {
 void nvbit_at_ctx_init(CUcontext ctx) {
     pthread_mutex_lock(&mutex);
     if (verbose) {
-        printf("MEMTRACE: STARTING CONTEXT %p\n", ctx);
+        printf("STARTING CONTEXT %p\n", ctx);
     }
     CTXstate* ctx_state = new CTXstate;
     assert(ctx_state_map.find(ctx) == ctx_state_map.end());
@@ -341,7 +355,7 @@ void nvbit_at_ctx_term(CUcontext ctx) {
     pthread_mutex_lock(&mutex);
     skip_callback_flag = true;
     if (verbose) {
-        printf("MEMTRACE: TERMINATING CONTEXT %p\n", ctx);
+        printf("TERMINATING CONTEXT %p\n", ctx);
     }
     /* get context state from map */
     assert(ctx_state_map.find(ctx) != ctx_state_map.end());
