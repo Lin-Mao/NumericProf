@@ -1,0 +1,123 @@
+PC_group: 208 (Non-exceptional instruction)
+PC 208 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 82 82 7d 82 82 7f 82 82 80 82 82 81 81 82 81 81 82 81 80 82 82 80 82 82 7d 82 82 7f 82 82 80 82 
+
+##################################################
+PC_group: 256 (Non-exceptional instruction)
+PC 256 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 86 85 80 85 86 83 85 86 84 85 86 84 85 86 85 84 86 85 84 86 85 83 86 85 81 85 86 82 85 85 84 85 
+
+##################################################
+PC_group: 304 (Non-exceptional instruction)
+PC 304 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 89 89 84 89 89 86 89 89 87 89 89 88 88 89 88 88 89 89 88 89 89 87 89 89 84 89 89 86 89 89 87 89 
+
+##################################################
+PC_group: 352 (Non-exceptional instruction)
+PC 352 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 8d 8d 88 8d 8d 8a 8c 8d 8b 8c 8d 8b 8c 8d 8c 8c 8d 8c 8b 8d 8c 8a 8d 8d 88 8d 8d 8a 8c 8d 8b 8c 
+
+##################################################
+PC_group: 400 (Non-exceptional instruction)
+PC 400 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 90 90 8b 90 90 8d 90 90 8e 90 90 8f 90 90 8f 8f 90 90 8f 90 90 8e 90 90 8c 90 90 8d 90 90 8e 90 
+
+##################################################
+PC_group: 448 (Non-exceptional instruction)
+PC 448 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 94 94 8f 94 94 91 94 94 92 93 94 93 93 94 93 93 94 93 92 94 94 92 94 94 8f 94 94 91 94 94 92 93 
+
+##################################################
+PC_group: 496 (Non-exceptional instruction)
+PC 496 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 97 97 92 97 97 94 97 98 96 97 98 96 97 98 97 96 98 97 96 98 97 95 97 97 93 97 97 94 97 97 96 97 
+
+##################################################
+PC_group: 544 (Non-exceptional instruction)
+PC 544 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 9b 9b 96 9b 9b 98 9b 9b 99 9b 9b 9a 9a 9b 9a 9a 9b 9b 9a 9b 9b 99 9b 9b 96 9b 9b 98 9b 9b 99 9b 
+
+##################################################
+PC_group: 592 (Non-exceptional instruction)
+PC 592 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: 9f 9e 9a 9f 9f 9c 9e 9f 9d 9e 9f 9d 9e 9f 9e 9e 9f 9e 9d 9f 9e 9c 9f 9e 9a 9f 9f 9c 9e 9e 9d 9e 
+
+##################################################
+PC_group: 640 (Non-exceptional instruction)
+PC 640 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: a2 a2 9d a2 a2 9f a2 a2 a0 a2 a2 a1 a2 a2 a1 a1 a2 a2 a1 a2 a2 a0 a2 a2 9e a2 a2 9f a2 a2 a0 a2 
+
+##################################################
+PC_group: 688 (Non-exceptional instruction)
+PC 688 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: a6 a6 a1 a6 a6 a3 a6 a6 a4 a5 a6 a5 a5 a6 a5 a5 a6 a5 a4 a6 a5 a3 a6 a6 a1 a6 a6 a3 a6 a6 a4 a5 
+
+##################################################
+PC_group: 736 (Non-exceptional instruction)
+PC 736 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: a9 a9 a4 a9 a9 a6 a9 a9 a8 a9 a9 a8 a9 aa a9 a8 aa a9 a8 a9 a9 a7 a9 a9 a5 a9 a9 a6 a9 a9 a7 a9 
+
+##################################################
+PC_group: 784 (Non-exceptional instruction)
+PC 784 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: ad ad a8 ad ad aa ad ad ab ad ad ac ac ad ac ac ad ac ab ad ad ab ad ad a8 ad ad aa ad ad ab ad 
+
+##################################################
+PC_group: 832 (Non-exceptional instruction)
+PC 832 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: b1 b0 ab b0 b1 ae b0 b1 af b0 b1 af b0 b1 b0 b0 b1 b0 af b1 b0 ae b1 b0 ac b0 b1 ad b0 b0 af b0 
+
+##################################################
+PC_group: 896 (Non-exceptional instruction)
+PC 896 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: b4 b4 af b4 b4 b1 b4 b4 b2 b4 b4 b3 b3 b4 b3 b3 b4 b4 b3 b4 b4 b2 b4 b4 af b4 b4 b1 b4 b4 b2 b4 
+
+##################################################
+PC_group: 944 (Non-exceptional instruction)
+PC 944 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: b4 b4 af b4 b4 b1 b4 b4 b2 b4 b4 b3 b3 b4 b3 b3 b4 b4 b3 b4 b4 b2 b4 b4 af b4 b4 b1 b4 f3 b2 b4 
+
+##################################################
+PC_group: 992 (Non-exceptional instruction)
+PC 992 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: b8 b8 b3 b8 b8 b5 b7 b8 b6 b7 b8 b6 b7 b8 b7 b7 b8 b7 b6 b8 b7 b5 b8 b8 b3 b8 b8 b5 b7 f7 b6 b7 
+
+##################################################
+PC_group: 1040 (Non-exceptional instruction)
+PC 1040 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: bb bb b6 bb bb b8 bb bb b9 bb bb ba bb bb ba ba bb bb ba bb bb b9 bb bb b7 bb bb b8 bb fa b9 bb 
+
+##################################################
+PC_group: 1088 (Non-exceptional instruction)
+PC 1088 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+  EXP: bf bf ba bf bf bc bf bf bd be bf be be bf be be bf be bd bf bf bd bf bf ba bf bf bc bf fe bd be 
+
+##################################################
+PC_group: 1136 (Non-exceptional instruction)
+PC 1136 (block_id, warp_id)=(0, (1,0,0), 0)
+  EXC:  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  0  0 
+  EXP: c2 c2 bd c2 c2 bf c2 c3 c1 c2 c3 c1 c2 c3 c2 c1 c3 c2 c1 c3 c2 c0 c2 c2 be c2 c2 bf c2 ff c1 c2 
+
+##################################################
+Summary:
+Total unique PC:20
+Exceptional PC:0

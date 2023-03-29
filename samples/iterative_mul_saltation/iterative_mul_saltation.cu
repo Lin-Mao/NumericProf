@@ -18,6 +18,9 @@
 
 
 // CUDA kernel. Each thread takes care of one element of c
+// d_c[i] = sin(i)
+// d_a[i] < 10.0
+// d_b[i] > 1.0E15
 __global__ void iterative_mul(float *d_c, float *d_a, float *d_b, int n) {
     // Get our global thread ID
     int id = blockIdx.x * blockDim.x + threadIdx.x;
@@ -25,9 +28,10 @@ __global__ void iterative_mul(float *d_c, float *d_a, float *d_b, int n) {
     // Make sure we do not go out of bounds
     if (id < n) {
         for (int i=0; i < 20; i++) {
-            d_c[id] *= d_a[id];
             if (i == 15) {
                 d_c[id] *= d_b[id];
+            } else {
+                d_c[id] *= d_a[id];
             }
         }
     }

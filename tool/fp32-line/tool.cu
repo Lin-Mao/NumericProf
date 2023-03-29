@@ -289,7 +289,7 @@ void* recv_thread_fun(void* args) {
                     printf("i=%d %s\n", count, pad.c_str());
                     count++;
                 }
-                ss << "PC " << ii->pc << " (block_id, warp_id)=("
+                ss << "PC " << ii->pc << " (grid_id, block_id, warp_id)=(" << ii->grid_launch_id
                    << ", (" << ii->cta_id_x << "," << ii->cta_id_y << "," << ii->cta_id_z
                    << "), " << ii->warp_id << ")\n";
 
@@ -325,8 +325,8 @@ void* recv_thread_fun(void* args) {
         printf("%s\n", pad.c_str());
         printf("Exception report:\n");
         for (auto i : exc_log) {
-            printf("PC: %d, (block_id, warp_id)->((%d, %d, %d), %d)\n",
-            i.ii->pc, i.ii->cta_id_x, i.ii->cta_id_y,
+            printf("PC: %d, (grid_id, block_id, warp_id)=(%lu, (%d, %d, %d), %d)\n",
+            i.ii->pc, i.ii->grid_launch_id, i.ii->cta_id_x, i.ii->cta_id_y,
             i.ii->cta_id_z, i.ii->warp_id);
             for (auto e : i.lane_id) {
                 printf(" - lane_id: %d, execption: %d\n", e, i.ii->exception[e]);
@@ -374,8 +374,4 @@ void nvbit_at_ctx_term(CUcontext ctx) {
     skip_callback_flag = false;
     delete ctx_state;
     pthread_mutex_unlock(&mutex);
-}
-
-void readLoopInfo (std::string filename) {
-
 }
